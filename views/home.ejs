@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="stylesheet" href="/css/style.css"/>
+        <title>Catalogue</title>
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <h2>Formation disponibles</h2>
+
+       
+        <button id="button" href='/panier'>Voir le panier</button>
+        <button  id='button' href= '/user'>Se connecter</button>
+        
+    </br>
+</br>
+
+        <table>
+            <tr>
+                <td>Id</td>
+                <td>Nom</td>
+                <td>Prix</td>
+                <td>Début</td>
+                <td>Fin</td>
+                <td></td>
+            </tr>
+            
+            <% for(let i=0 ; i < formation.length;i++) { %>
+                <tr>
+                <td><%=formation[i].idformation%></td>
+                <td><%=formation[i].Nom%></td>
+                <td><%=formation[i].Prix%></td>
+                <td><%=formation[i].Début%></td>
+                <td><%=formation[i].Fin%></td>
+                <td>
+                    <form action='/panier' method='post'>
+                        <input type='hidden' name="formation" value="<%=formation[i].idformation%>"> 
+                        <input type='submit' id="button"  value="S'inscrire">
+                    </form>
+                </td>   
+                <tr>
+            <%}%>
+           
+
+
+        </table>
+    
+    </body>
+</html>
