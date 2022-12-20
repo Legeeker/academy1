@@ -3,23 +3,19 @@ let express = require("express");
 
 //Initialize the app
 let app = express();
+app.use(express.urlencoded({extended:true}));
 
-// // je dois faire la connection avec mon serveur 
-// var mysql = require("mysql");
-// //Database connection 
-// var connection = mysql.createConnection({
-//     host    : 'localhost',
-//     user    : 'root',
-//     password: 'root',
-//     database: 'academy1'// ma table 
-// });
-// connection.connect(function(error){if(error) console.log(error)});
+let router = require('./routes');
+let session = require('express-session');
+app.use(session({
+    secret: 'my secret',
+    resave: false,
+    saveUninitialized: true
+
+}));
 
 
-//send message for default URL 
-app.get('/',(rep,res)=>{
-    res.send("hello world !");
-});
+app.use('/', router);
 
 //launch app to listen to specified port 
 app.listen(8000,function(){

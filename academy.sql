@@ -41,6 +41,29 @@ LOCK TABLES `formation` WRITE;
 INSERT INTO `formation` VALUES (1,'JAVA','200','06-12-2021','07-12-2021'),(2,'HTML CSS','150','19-12-2021','20-12-2021'),(3,'Node Js','250','09-01-2022','11-01-2022');
 /*!40000 ALTER TABLE `formation` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `inscris`
+--
+
+DROP TABLE IF EXISTS `inscris`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `inscris` (
+  `idinscris` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idinscris`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `inscris`
+--
+
+LOCK TABLES `inscris` WRITE;
+/*!40000 ALTER TABLE `inscris` DISABLE KEYS */;
+/*!40000 ALTER TABLE `inscris` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -51,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-20 17:18:18
+-- Dump completed on 2022-12-20 23:04:41
